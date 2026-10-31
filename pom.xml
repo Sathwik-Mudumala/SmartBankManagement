@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="
+            http://maven.apache.org/POM/4.0.0
+            http://maven.apache.org/maven-v4_0_0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.bank</groupId>
+    <artifactId>SmartBankManagementSystem</artifactId>
+    <packaging>war</packaging>
+    <version>0.0.1-SNAPSHOT</version>
+
+    <name>SmartBankManagementSystem Maven Webapp</name>
+    <url>http://maven.apache.org</url>
+
+    <!-- ========================= -->
+    <!-- Properties -->
+    <!-- ========================= -->
+
+    <properties>
+        <java.version>17</java.version>
+
+        <!-- Keep ALL Spring Framework modules on the same version -->
+        <spring.version>6.1.3</spring.version>
+
+        <spring-data-jpa.version>3.2.1</spring-data-jpa.version>
+
+        <hibernate.version>6.4.4.Final</hibernate.version>
+
+        <jakarta.persistence.version>3.1.0</jakarta.persistence.version>
+        <jakarta.servlet.version>6.0.0</jakarta.servlet.version>
+        <jakarta.jsp.version>3.1.1</jakarta.jsp.version>
+        <jakarta.jstl.version>3.0.0</jakarta.jstl.version>
+
+        <mysql.version>8.3.0</mysql.version>
+
+        <maven.compiler.version>3.11.0</maven.compiler.version>
+    </properties>
+
+
+    <!-- ========================= -->
+    <!-- Dependencies -->
+    <!-- ========================= -->
+
+    <dependencies>
+
+        <!-- ========================= -->
+        <!-- Spring Data JPA -->
+        <!-- ========================= -->
+
+        <dependency>
+            <groupId>org.springframework.data</groupId>
+            <artifactId>spring-data-jpa</artifactId>
+            <version>${spring-data-jpa.version}</version>
+        </dependency>
+
+
+        <!-- ========================= -->
+        <!-- Spring Context Support -->
+        <!-- ========================= -->
+
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context-support</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+
+
+        <!-- ========================= -->
+        <!-- Spring MVC -->
+        <!-- ========================= -->
+
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-webmvc</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+
+
+        <!-- ========================= -->
+        <!-- Spring ORM -->
+        <!-- ========================= -->
+
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-orm</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+
+
+        <!-- ========================= -->
+        <!-- Spring Transactions -->
+        <!-- ========================= -->
+
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-tx</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+
+
+        <!-- ========================= -->
+        <!-- Angus Mail -->
+        <!-- ========================= -->
+
+        <dependency>
+            <groupId>org.eclipse.angus</groupId>
+            <artifactId>angus-mail</artifactId>
+            <version>2.0.2</version>
+        </dependency>
+
+
+        <!-- ========================= -->
+        <!-- Hibernate -->
+        <!-- ========================= -->
+
+        <dependency>
+            <groupId>org.hibernate.orm</groupId>
+            <artifactId>hibernate-core</artifactId>
+            <version>${hibernate.version}</version>
+        </dependency>
+
+
+        <!-- ========================= -->
+        <!-- Jakarta Persistence -->
+        <!-- ========================= -->
+
+        <dependency>
+            <groupId>jakarta.persistence</groupId>
+            <artifactId>jakarta.persistence-api</artifactId>
+            <version>${jakarta.persistence.version}</version>
+        </dependency>
+
+
+        <!-- ========================= -->
+        <!-- MySQL -->
+        <!-- ========================= -->
+
+        <dependency>
+            <groupId>com.mysql</groupId>
+            <artifactId>mysql-connector-j</artifactId>
+            <version>${mysql.version}</version>
+        </dependency>
+
+
+        <!-- ========================= -->
+        <!-- Jakarta Servlet -->
+        <!-- ========================= -->
+
+        <dependency>
+            <groupId>jakarta.servlet</groupId>
+            <artifactId>jakarta.servlet-api</artifactId>
+            <version>${jakarta.servlet.version}</version>
+            <scope>provided</scope>
+        </dependency>
+
+
+        <!-- ========================= -->
+        <!-- Jakarta JSP -->
+        <!-- ========================= -->
+
+        <dependency>
+            <groupId>jakarta.servlet.jsp</groupId>
+            <artifactId>jakarta.servlet.jsp-api</artifactId>
+            <version>${jakarta.jsp.version}</version>
+            <scope>provided</scope>
+        </dependency>
+
+
+        <!-- ========================= -->
+        <!-- JSTL API -->
+        <!-- ========================= -->
+
+        <dependency>
+            <groupId>jakarta.servlet.jsp.jstl</groupId>
+            <artifactId>jakarta.servlet.jsp.jstl-api</artifactId>
+            <version>${jakarta.jstl.version}</version>
+        </dependency>
+
+
+        <!-- ========================= -->
+        <!-- JSTL Implementation -->
+        <!-- ========================= -->
+
+        <dependency>
+            <groupId>org.glassfish.web</groupId>
+            <artifactId>jakarta.servlet.jsp.jstl</artifactId>
+            <version>3.0.1</version>
+        </dependency>
+
+    </dependencies>
+
+
+    <!-- ========================= -->
+    <!-- Build -->
+    <!-- ========================= -->
+
+    <build>
+
+        <finalName>SmartBankManagementSystem</finalName>
+
+        <plugins>
+
+            <!-- Java Compiler -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>${maven.compiler.version}</version>
+
+                <configuration>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
+
+                    <compilerArgs>
+                        <arg>-parameters</arg>
+                    </compilerArgs>
+                </configuration>
+            </plugin>
+
+        </plugins>
+
+    </build>
+
+</project>
